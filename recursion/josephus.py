@@ -8,4 +8,4 @@ def josephus(n, k):
                                 
 
 if __name__ == '__main__':
-    print(josephus(190,2))
+    print(josephus(7,2))

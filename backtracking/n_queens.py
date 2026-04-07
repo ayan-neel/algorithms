@@ -2,7 +2,6 @@ def n_queens(row, board):
     # Base case: all queens placed
     if row == len(board):
         print_board(board)
-        print()
         return  # Stop recursion for this branch
 
     for col in range(len(board[0])):
