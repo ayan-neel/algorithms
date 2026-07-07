@@ -14,19 +14,19 @@ def slide (k,arr):
     r=l=0
     sum=0
     maxLen = 0
-    while (r<len(arr) and l<=r):
-        checksum = sum +arr[r]
-        if checksum>=k and l ==r: #edge case
+    while (r<len(arr) and l<=r):  #boiler plate
+        checksum = sum +arr[r] #problem statement basis
+        if checksum>=k and l ==r: #edge case #also problem statement basis
             l+=1
             r+=1
             continue
-        if checksum < k:
+        if checksum < k: #problem statement basis
             sum = checksum
-            maxLen = max(maxLen,r-l+1)
-            r+=1
+            maxLen = max(maxLen,r-l+1) #problem statement basis
+            r+=1 #boiler plate
         else:
-            sum = sum - arr[l]
-            l+=1
+            sum = sum - arr[l] #problem statement basis
+            l+=1 #boiler plate
     return maxLen
 
 if __name__ =="__main__":
