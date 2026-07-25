@@ -23,7 +23,6 @@ def compute_correct(s):
     while(r<len(s)):
         if s[r] not in tracker:
             tracker.add(s[r])
-            r+=1
             continue
         else:
             maxLen = max(maxLen,len(tracker))
@@ -31,7 +30,7 @@ def compute_correct(s):
                 tracker.remove(s[l])
                 l+=1
             tracker.add(s[r])
-            r+=1
+        r+=1
     return max(maxLen,len(tracker)) ## required for a completely non repeating character string.
 
 ## optimisation, map with indices.

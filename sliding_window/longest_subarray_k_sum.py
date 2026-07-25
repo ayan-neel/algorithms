@@ -29,9 +29,29 @@ def slide (k,arr):
             l+=1 #boiler plate
     return maxLen
 
+def optimal_slide(k,arr):
+    r=l=0
+    sum = 0
+    maxLen = 0
+    while(r<len(arr)):
+        checksum = sum + arr[r]
+        if checksum < k:
+            sum = checksum
+        else:
+            sum = checksum
+            maxLen = max(maxLen,r-l)
+            while(sum>=k):
+                sum = sum - arr[l]
+                l+=1
+        r+=1
+    return maxLen
+
+
+
 if __name__ =="__main__":
-    arr = [-1,-1,-1,-1,-1]
+    arr = [10,3,6,0,11,2]
     k = 10
     print(brute_force(k,arr))
     print(slide(k,arr))
+    print(optimal_slide(k,arr))
 
